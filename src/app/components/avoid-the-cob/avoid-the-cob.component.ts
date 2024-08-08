@@ -69,9 +69,9 @@ export class AvoidTheCobComponent implements OnInit {
   ) {}
 
   @HostListener('window:resize') onResize() {
+    this.canvasService.setup();
     if (!this.deviceService.isTouchScreen) {
       this.gameStateService.browserResized = true;
-      this.canvasService.setup();
     }
   }
 
